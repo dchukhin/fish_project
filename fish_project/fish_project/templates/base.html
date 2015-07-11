@@ -17,12 +17,18 @@
   </head>
 
   <body>
-    {% block displayed_on_every_page %}
-      <div>displayed on every page</div>
-    {% endblock displayed_on_every_page %}
+    {% block pre-nav %}pre-nav{% endblock pre-nav %}
 
-    {% block content_paragraph %}{% endblock content_paragraph %}
+    <div id="nav">
+      {% block nav %}
+      nav
+      {% endblock nav %}
+    <!-- End of div id="nav" -->
+    </div>
 
+    {% block content %}content{% endblock content %}
+
+    {% block footer %}footer{% endblock footer %}
 
   </body>
 </html>
