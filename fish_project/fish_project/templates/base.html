@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+     <title>{% if page_attributes.page_title %}{{ page_attributes.page_title }}{% else %}{% block title-outer %}{% block title %}{% endblock title %} | Redemption Fish Company{% endblock title-outer %}{% endif %}</title>
+
+    {% block meta %}
+        <!-- Meta tags -->
+        <meta charset="utf-8">
+        <!-- Display in highest available IE, as long as IE version >=9 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Width is set to the width of the screen (which differs based on device) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="{% if page_attributes.meta_description %}{{ page_attributes.meta_description }}{% else %}{% block meta-description %}{% endblock meta-description %}{% endif %}">
+        <meta name="author" content="{% block meta-author %}{% endblock meta-author %}">
+    {% endblock meta %}
+  </head>
+
+  <body>
+    {% block displayed_on_every_page %}
+      <div>displayed on every page</div>
+    {% endblock displayed_on_every_page %}
+
+    {% block content_paragraph %}{% endblock content_paragraph %}
+
+
+  </body>
+</html>
