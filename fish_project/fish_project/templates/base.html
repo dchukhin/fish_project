@@ -14,6 +14,7 @@
         <meta name="description" content="{% if page_attributes.meta_description %}{{ page_attributes.meta_description }}{% else %}{% block meta-description %}{% endblock meta-description %}{% endif %}">
         <meta name="author" content="{% block meta-author %}{% endblock meta-author %}">
     {% endblock meta %}
+    {% block extra-stuff-head %}{% endblock extra-stuff-head %}
   </head>
 
   <body>

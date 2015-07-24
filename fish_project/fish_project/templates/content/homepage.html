@@ -1,5 +1,81 @@
 {% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block extra-stuff-head %}
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" />
+{% endblock extra-stuff-head %}
 
 {% block content %}
-<div>homepage html</div>
+aaa<br>
+static place: {% static "js/homepage_tabs.js" %}
+<div>homepage html
+  <div class="homepageapp" ng-app="homepagetabs">
+    {% verbatim %}    
+      <div class=tab ng-controller="TabController as tab">
+
+        {{ tab }}
+        <!-- The tabs -->
+        <ul class="nav nav-pills">
+          <!-- If current tab is active, then it should be displayed -->
+          <li ng-class="{active:tab.isTabSet(1)}">
+            <a href ng-click="tab.setTab(1)">Tab1</a>
+          </li>
+          <li ng-class="{active:tab.isTabSet(2)}">
+            <a href ng-click="tab.setTab(2)">Tab2</a>
+          </li>
+          <li ng-class="{active:tab.isTabSet(3)}">
+            <a href ng-click="tab.setTab(3)">Tab3</a>
+          </li>
+          <li ng-class="{active:tab.isTabSet(4)}">
+            <a href ng-click="tab.setTab(4)">Tab4</a>
+          </li>
+          <li ng-class="{active:tab.isTabSet(5)}">
+            <a href ng-click="tab.setTab(5)">Tab5</a>
+          </li>
+          <li ng-class="{active:tab.isTabSet(6)}">
+            <a href ng-click="tab.setTab(6)">Tab6</a>
+          </li>
+          <li ng-class="{active:tab.isTabSet(7)}">
+            <a href ng-click="tab.setTab(7)">Tab7</a>
+          </li>
+        </ul>
+
+        <!-- Display one of these tabs when it is active -->
+        <div ng-show="tab.isTabSet(1)">
+          <tab1-file></tab1-file>
+        </div>
+        <div ng-show="tab.isTabSet(2)">
+          <tab2-file></tab2-file>
+<!--
+          Tab2 is set here!
+-->
+        </div>
+        <div ng-show="tab.isTabSet(3)">
+          <tab3-file></tab3-file>
+        </div>
+        <div ng-show="tab.isTabSet(4)">
+          <tab4-file></tab4-file>
+        </div>
+        <div ng-show="tab.isTabSet(5)">
+          <tab5-file></tab5-file>
+        </div>
+        <div ng-show="tab.isTabSet(6)">
+          <tab6-file></tab6-file>
+        </div>
+        <div ng-show="tab.isTabSet(7)">
+          <tab7-file></tab7-file>
+        </div> 
+
+      </div> <!-- End of TabController div -->
+    {% endverbatim %}
+  <!-- End the ng-app div -->
+  </div>
+</div>
+<!-- Angular file -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+<!-- In the future, get a local version -->
+<!--<script type="text/javascript" src=""></script>-->
+<!-- JS file -->
+<script type="text/javascript" src="{% static "js/homepage_tabs.js" %}"></script>
 {% endblock content %}
