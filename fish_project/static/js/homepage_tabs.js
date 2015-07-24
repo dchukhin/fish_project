@@ -65,18 +65,4 @@
     };
   });
 
-
-
-var tabData = [
-  {tabName: 'Tab1', info: 'aaa'},
-  {tabName: 'Tab2', info: 'bbb'},
-  {tabName: 'Tab3', info: 'ccc'},
-  {tabName: 'Tab4', info: 'ddd'},
-  {tabName: 'Tab5', info: 'eee'},
-  {tabName: 'Tab6', info: 'fff'},
-  {tabName: 'Tab7', info: 'ggg'},
-];
-
-
-
 })();
