@@ -1,0 +1,5 @@
+### Django-specific ###
+Django==1.8
+
+### Python packages ###
+psycopg2==2.6.1
