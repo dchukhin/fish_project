@@ -6,6 +6,7 @@ Requirements
 ---
 * Django 1.8
 * Postgres 9.2
+* psycopg2 2.6
 
 Set-Up
 ---
